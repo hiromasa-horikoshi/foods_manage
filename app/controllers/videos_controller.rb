@@ -17,15 +17,6 @@ class VideosController < ApplicationController
     end
   end
 
-  # def search
-  #   recipe = params[:recipe]
-  #   params = URI.encode_www_form({recipe: recipe})
-    
-  #   response = Net::HTTP.get_response(uri)
-  #   result = JSON.parse(response.body)
-    
-  # end
-
   private
   def video_params
     params.require(:video).permit(:content, :video).merge(user_id: current_user.id)
