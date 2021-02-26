@@ -1,3 +1,29 @@
+.main-message {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.dislike {
+  font-size: 20px;
+}
+
+.user {
+  font-size: 20px;
+  margin-top: 30px;
+  text-decoration: underline;
+}
+
+.unpalatability-name {
+  font-size: 18px;
+}
+
+.unpalatability-area {
+  width: 20%;
+  height: calc(100vh - 190px);
+  overflow: scroll;
+}
+
 .wrapper {
   display: flex;
 }
@@ -35,6 +61,7 @@
 
 .messages {
   height: calc(100vh - 190px);
+  width: 80%;
   background-color: #fafafa;
   padding: 46px 40px 0;
   overflow: scroll;

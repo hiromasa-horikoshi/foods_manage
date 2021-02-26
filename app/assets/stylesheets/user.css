@@ -1,12 +1,3 @@
-html {
-  background-color: #f7b258;
-  background-image: url(../images/cook.jpg);
-  background-repeat: no-repeat;
-  min-height: 100vh;
-  background-position: center;
-  background-size: cover;
-}
-
 .account-page .account-page__inner {
   width: 980px;
   margin: 60px auto;

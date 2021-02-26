@@ -5,7 +5,7 @@
     </div>
   </div>
   <div class="center-header">
-    <%= form_with url: root_path, method: :get, local: true do |form|%>
+    <%= form_with url: search_communities_path, method: :get, local: true do |form|%>
       <%= form.text_field :recipe, class: "recipe", placeholder: "レシピを検索" %>
       <button type="submit" class="search-btn">
         Search<i class="fas fa-utensils"></i>
@@ -19,8 +19,31 @@
   </div>
 </div>
 
-<div class="messages">
-  <%= render partial: 'video', collection: @videos %>
+<div class="main-message">
+  <div class="messages">
+    <%= render partial: 'video', collection: @videos %>
+  </div>
+  <div class="unpalatability-area">
+    <div class="dislike">
+      苦手な料理・材料一覧
+    </div>
+    <div class="user">
+      <%= User.where(id: @user)[0].name %>さん
+    </div>
+    <div class="unpalatability-name">
+      <% User.where(id: @user)[0].unpalatability.each do |others_food| %>
+        <br>- <%= others_food %>
+      <% end %>
+    </div>
+    <div class="user">
+      <%= current_user.name %>さん
+    </div>
+    <div class="unpalatability-name">
+      <% current_user.unpalatability.each do |current_user_food| %>
+        <br>- <%= current_user_food %>
+      <% end %>
+    </div>
+  </div>
 </div>
 
 <%= form_with model: [@community, @video], id: 'video', class: 'form', local: true do |f| %>
